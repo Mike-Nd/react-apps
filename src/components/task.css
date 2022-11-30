@@ -1,0 +1,40 @@
+.task-text{
+    color:  rgb(12, 3, 34);
+    font-size: 1.5rem;
+    max-width: 80%;
+}
+
+.task-wrapper {
+    background-color: #fff  ;
+    border-radius: 15px;
+    padding: 0 24px 0 24px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.square {
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: rgb(12, 3, 34);
+    border: 1px solid rgb(12, 3, 34);
+    opacity: 0.4;
+    margin-right: 10px;
+}
+
+.circle{
+    border-radius: 15px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid rgb(12, 3, 34);
+}
