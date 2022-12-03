@@ -1,18 +1,19 @@
 .task-text{
     color:  rgb(12, 3, 34);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     max-width: 80%;
 }
 
 .task-wrapper {
     background-color: #fff  ;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 0 24px 0 24px;
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 20px 0.2px rgb(126, 126, 126);
 }
 
 .task-main {
