@@ -12,9 +12,9 @@
   padding: 20px;
 }
 
-.header-title {
-  margin: 0 0 30px 0;
-  font-size: 2rem;
+.app-title{
+  text-align: center;
+  text-decoration: underline;
 }
 
 /* Inputs */
@@ -36,7 +36,7 @@
   padding: 15px;
   border-radius: 20px;
   border: 0;
-  max-width: 200px;
+  max-width: 250px;
   box-shadow: 0 0 30px 3px rgb(94, 94, 94);
 }
 
@@ -53,3 +53,12 @@
   align-items: center;
   border: 0;
 }
+
+.taskAbsense {
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  bottom: -200px;
+}
+
+
