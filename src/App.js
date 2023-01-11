@@ -6,10 +6,14 @@ function App() {
   const [task, setTask] = useState("");
   const [list, setList] = useState([]);
 
-  const addTodo = () => {
+  const addTodo = (e) => {
     //Add task
-    list.push({ description: task });
-    setList(list);
+    let value = e.target.value;
+
+    if (value !== task) {
+      list.push({ description: task });
+      setList(list);
+    }
 
     //clear input box
     setTask("");
@@ -22,30 +26,33 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="app-title">TASKIT</h1>
-        <div>
-          {list.length ? (
-            list.map((item, index) =>
-              <Task id={index} text={item} deleteTodo={deleteTodo} />)
-          ) : (
-            <p className="taskAbsense">No task avalaible.</p>
-          )}
+    <div class="container">
+      <h1 className="app-title">TASKIT</h1>
+
+      <div className="App">
+        <div className="App-footer">
+          <input
+            className="input-box"
+            placeholder="Write a task"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
+          <button className="input-icon" onClick={(e) => addTodo(e)}>
+            +
+          </button>
         </div>
-      </header>
 
-      <div className="App-footer">
-        <input
-          className="input-box"
-          placeholder="Write a task"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-
-        <button className="input-icon" onClick={() => addTodo(task)}>
-          +
-        </button>
+        <div className="App-header">
+          <div>
+            {list.length ? (
+              list.map((item, index) => (
+                <Task id={index} text={item} deleteTodo={deleteTodo} />
+              ))
+            ) : (
+              <p className="taskAbsense">No task avalaible.</p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
