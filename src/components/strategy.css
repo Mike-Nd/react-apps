@@ -49,6 +49,6 @@
 
   .task-wrapper {
     box-shadow: 0 0 20px 0.2px rgb(126, 126, 126);
-    height: 2rem;
+    height: 20px;
   }
 }
