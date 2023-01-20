@@ -3,17 +3,12 @@ import "./strategy.css";
 function Strategy(props) {
   return (
     <div className="task-wrapper">
-      <div
-        className="task-main">
-        
-        <button className="square"/>
-        <p className="task-text">{props.text.description}</p>
+      <div className="task-main">
+        <button className="square" onClick={() => props.deleteItem(props.id)}>
+          X
+        </button>{" "}
+        <p className="task-text">{props.text}</p>
       </div>
-
-      <div
-        className="circle"
-        onClick={() => props.deleteTodo(props.id)}
-      />
     </div>
   );
 }

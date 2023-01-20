@@ -1,16 +1,18 @@
 .task-text {
   color: rgb(12, 3, 34);
-  font-size: 1.7rem;
-  max-width: 90%;
+  font-size: 1rem;
   text-align: left;
+  max-height: 2rem;
+  word-break: break-all;
+  overflow: auto;
 }
 
 .task-wrapper {
   background-color: #fff;
   border-radius: 20px;
-  padding: 0 20px 0 20px;
-  height: 70px;
-  margin-top: 25px;
+  padding: 0 20px 0;
+  height: 50    px;
+  margin-top: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,29 +28,28 @@
 }
 
 .square {
-  height: 25px;
-  width: 25px;
   border-radius: 5px;
-  background-color: rgb(12, 3, 34);
-  border: 1px solid rgb(12, 3, 34);
-  opacity: 0.4;
-  margin-right: 10px;
+  background-color: rgb(20, 0, 75);
+  border: 0;
+  color: rgb(255, 145, 8);
+  font-size: 1.2rem;
+  margin-left: 5px;
+  text-align: center;
 }
 
 .circle {
   border-radius: 15px;
+  margin-right: 10px;
+  vertical-align: middle; 
   height: 20px;
   width: 20px;
-  border: 2px solid rgb(12, 3, 34);
+  background-color: rgb(20, 0, 75);
+  border: 2px solid rgb(255, 145, 8);
 }
 
-@media screen and (max-width: 600px) {
-  .task-text {
-    font-size: 1.2rem;
-  }
-
+@media screen and (min-width: 850px) {
   .task-wrapper {
-    box-shadow: 0 0 20px 0.2px rgb(126, 126, 126);
-    height: 20px;
+    position: relataive;
+    top: 120px;
   }
 }

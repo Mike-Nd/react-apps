@@ -1,0 +1,56 @@
+.box {
+  width: 85%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  padding: 20px 0;
+  margin: auto; 
+}
+
+.input-icon {
+  background-color: #ffffff;
+  box-shadow: 0 0 30px 3px rgb(94, 94, 94);
+  border-radius: 100%;
+  font-size: 2.5rem;
+  color: rgb(20, 0, 75);
+  border: 0;
+  padding: 0 15px 5px;
+}
+
+.input-icon:hover {
+    background-color: gray;
+}
+
+.input {
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0 15px;
+  height: 50px;
+  border: 0;
+  color: rgb(20, 0, 75);
+  width: 70%;
+  box-shadow: 0 0 30px 3px rgb(94, 94, 94);
+}
+
+.section {
+  margin: 10px 0 30%;
+} 
+
+
+@media screen and (min-width: 850px) {
+    .box {
+        position: relative;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .input, .input-icon {
+        border-radius: 10px;
+    }
+     
+} 
+  

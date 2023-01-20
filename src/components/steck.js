@@ -59,7 +59,7 @@ function App() {
     <div className="App">
       <div className="Container">
         <div className="header">
-          <h1 className="title">Tradal</h1>
+          <h1 className="title">Streck</h1>
 
           <div class="block">
             <h2 className="outcome">{outcome}</h2>
