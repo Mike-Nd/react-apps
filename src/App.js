@@ -1,28 +1,36 @@
 import "./App.css";
 import Strategy from "./components/strategy";
-import InputBox from "./components/inputbox";
+import InputForm from "./components/inputform";
 import React, { useState } from "react";
 
 function App() {
-  const [value, setValue] = useState("");
-  const [outcome, setOutcome] = useState("0");
+  const [clicked, setClicked] = useState();
   const [list, setList] = useState([]);
+  const [result, setResult] = useState("");
+  const [percentage, setPercentage] = useState("");
+  const [text, setText] = useState("");
 
-  //global variables
-  let result = 0;
-  let count = 0;
-  let updatedList = list;
+  const display = (e) => {
 
-  //add new strategy
-  const addItem = (e) => {
-    //check for duplicates
-    let input = e.target.value;
-    if (value !== input) {
-      setList([...list, value]);
-    }
+    let value = e.target.value;
+    console.log(value.text);
 
-    //clear input box
-    setValue("");
+    list.push({
+      result: result,
+      percentage: percentage,
+      text: text,
+    });
+
+    setList(list);
+
+    setPercentage("");
+    setResult("");
+    setText("");
+
+    //remove the form
+    setClicked("");
+
+    console.log(value);
   };
 
   //delete strategy
@@ -33,54 +41,35 @@ function App() {
     setList(newList);
   };
 
-  //calculate outcome
-  const calculate = (id) => {
-    count += 1;
-    console.log(count);
-
-    updatedList = list.filter((item, index) => index !== id);
-    console.log(id);
-    console.log(updatedList);
-
-    const n = list.length;
-    result = Math.round((count + n) * 100);
-
-    setOutcome(result);
-
-    console.log(result);
-    console.log(list);
-  };
-
-  const reset = () => {
-    setOutcome("0");
-  };
-
   return (
-    <div className="App">
+    <div className="App" >
       <div className="Container">
         <div className="header">
           <h1 className="title">Tradal</h1>
 
-          <div class="block">
-            <h2 className="outcome">{outcome}</h2>
-            <h5 className="percent">%</h5>
-          </div>
-          <button className="reset" onClick={() => reset()}>
-            reset
-          </button>
-          <InputBox addItem={addItem} value={value} setValue={setValue} />
+          <InputForm
+            clicked={clicked}
+            setResult={setResult}
+            setPercentage={setPercentage}
+            setText={setText}
+            display={display}
+            setClicked={setClicked}
+          />
           <div class="section">
             {list.length ? (
               list.map((item, index) => (
                 <Strategy
-                  calculate={calculate}
+                  percentage={item.percentage}
+                  result={item.result}
                   deleteItem={deleteItem}
                   id={index}
-                  text={item}
+                  text={item.text}
+                  clicked={clicked}
+                  setClicked={setClicked}
                 />
               ))
             ) : (
-              <p className="display">No Strategy Found.</p>
+              <p className="display">No Enteries Found.</p>
             )}
           </div>
         </div>
